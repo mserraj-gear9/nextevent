@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build / Expo
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+backoffice/.next/
+backoffice/out/
+
+# Env
+.env
+.env.local
+.env.*.local
+*.env
+
+# Supabase
+supabase/.branches
+supabase/.temp
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs / Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+*.tsbuildinfo
+.next/
+expo-env.d.ts
