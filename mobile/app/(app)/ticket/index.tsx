@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, ActivityIndicator } from 'react-native';
 import { useSession } from '../../../lib/SessionContext';
-import { supabase } from '../../../lib/supabase';
+import { supabase } from '../../../lib/supabase/supabase';
 import QRCode from 'react-native-qrcode-svg';
 import { colors, typography, spacing, borderRadius } from '../../../constants/theme';
 

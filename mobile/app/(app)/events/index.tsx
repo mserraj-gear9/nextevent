@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
 import { router } from 'expo-router';
-import { supabase } from '../../../lib/supabase';
+import { supabase } from '../../../lib/supabase/supabase';
 import { colors, typography, spacing, borderRadius } from '../../../constants/theme';
 
 type Event = { id: string; name: string; location: string | null; start_at: string; end_at: string };

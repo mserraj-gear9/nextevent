@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { View, Text, FlatList, Image, StyleSheet, ActivityIndicator } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
-import { supabase } from '../../../lib/supabase';
+import { supabase } from '../../../lib/supabase/supabase';
 import { colors, typography, spacing, borderRadius } from '../../../constants/theme';
 
 type Speaker = { id: string; full_name: string; bio: string | null; company: string | null; photo_url: string | null };

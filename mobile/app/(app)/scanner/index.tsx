@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { useSession } from '../../../lib/SessionContext';
-import { supabase } from '../../../lib/supabase';
+import { supabase } from '../../../lib/supabase/supabase';
 import { colors, typography, spacing, borderRadius } from '../../../constants/theme';
 import { offlineCheckIn } from '../../../lib/offlineCheckIn';
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, ActivityIndicator, Alert } from 'react-native';
 import { useLocalSearchParams, router } from 'expo-router';
 import { useSession } from '../../../lib/SessionContext';
-import { supabase } from '../../../lib/supabase';
+import { supabase } from '../../../lib/supabase/supabase';
 import { colors, typography, spacing, borderRadius } from '../../../constants/theme';
 
 type Event = { id: string; organization_id: string; name: string; description: string | null; location: string | null; start_at: string; end_at: string };
