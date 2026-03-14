@@ -4,6 +4,8 @@ import { Link, router } from 'expo-router';
 import { supabase } from '../../lib/supabase/supabase';
 import { colors, typography, spacing, borderRadius } from '../../constants/theme';
 
+const DEFAULT_ORGANIZATION_ID = 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'; // Morocco Events Hub
+
 export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,10 +21,17 @@ export default function Signup() {
     const { data: { user }, error } = await supabase.auth.signUp({
       email,
       password,
-      options: { data: { full_name: fullName || email, role: 'participant' } },
+      options: {
+        data: {
+          full_name: fullName || email,
+          role: 'participant',
+          organization_id: DEFAULT_ORGANIZATION_ID,
+        },
+      },
     });
     setLoading(false);
     if (error) {
+      console.log(error);
       Alert.alert('Sign up failed', error.message);
       return;
     }

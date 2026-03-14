@@ -13,14 +13,20 @@ export default function MyTicketScreen() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!user?.id) return;
+    if (!user?.id) {
+      setTickets([]);
+      setLoading(false);
+      return;
+    }
+    setLoading(true);
     (async () => {
       const { data } = await supabase
         .from('tickets')
-        .select('id, ticket_code, event:events(name, start_at)')
+        .select('id, ticket_code, user_id, event:events(name, start_at)')
         .eq('user_id', user.id)
         .order('created_at', { ascending: false });
-      setTickets((data as any) ?? []);
+      const list = (data as any) ?? [];
+      setTickets(list.filter((t: any) => t.user_id === user.id));
       setLoading(false);
     })();
   }, [user?.id]);

@@ -43,9 +43,12 @@
     },
     "extra": {
       "router": {},
+      "supabaseUrl": "https://axcycfnoiggotaskscyc.supabase.co",
+      "supabaseAnonKey": "sb_publishable_YOEP3xnzYMFa-F7TWvAjUA_UfTmaUCC",
       "eas": {
         "projectId": "2bd7c160-6d51-469f-9c7a-85748102a1ec"
       }
-    }
+    },
+    "owner": "mmorjani"
   }
 }

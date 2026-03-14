@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
+import Constants from 'expo-constants';
 
-const url = 'https://axcycfnoiggotaskscyc.supabase.co';
-const anonKey = 'sb_publishable_YOEP3xnzYMFa-F7TWvAjUA_UfTmaUCC';
+const { supabaseUrl, supabaseAnonKey } = Constants.expoConfig?.extra!;
 
-export const supabase = createClient(url, anonKey);
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);

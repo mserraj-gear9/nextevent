@@ -41,12 +41,16 @@ export default function EventDetailsScreen() {
   const timeStr = `${start.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })} – ${end.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })}`;
 
   async function registerForEvent() {
+    const { data: { session } } = await supabase.auth.getSession();
+console.log('user', user?.id);
+
     if (!user?.id || !event) return;
     const { error } = await supabase.from('tickets').insert({
       organization_id: event.organization_id,
       event_id: event.id,
       user_id: user.id,
     });
+    console.log('registerForEvent 444', error);
     if (error) {
       if (error.code === '23505') setHasTicket(true);
       else Alert.alert('Error', error.message);
